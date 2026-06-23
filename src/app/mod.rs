@@ -211,10 +211,7 @@ impl VoiceApp {
                 }
                 Err(e) => {
                     eprintln!("[voice] Warning: Could not set up global hotkey: {}", e);
-                    if self.config.push_to_talk {
-                        eprintln!("[voice] Falling back to toggle mode (press space to start/stop recording).");
-                        self.config.push_to_talk = false;
-                    }
+                    eprintln!("[voice] Global hotkey unavailable. Use terminal keyboard (space) to record.");
                 }
             }
         }
